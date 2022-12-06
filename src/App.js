@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Show from "./Components/Show";
+import Create from "./Components/Create";
 
 function App() {
+  const [gallery, setgallery] = useState([])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Create gallery={gallery} setgallery={setgallery} />
+
+    <hr className="m-auto w-50 mt-3" />
+    
+    <Show gallery={gallery} setgallery={setgallery}/>
+    </>
+  )
 }
 
 export default App;
